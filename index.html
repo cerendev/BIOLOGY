@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evolution Unit – 1 Hour Cram Guide 🧬</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fdf6e3;
+    --ink: #2c2416;
+    --red: #e63946;
+    --blue: #457b9d;
+    --green: #52b788;
+    --yellow: #ffd166;
+    --orange: #f4845f;
+    --purple: #9b72cf;
+    --pink: #e07a8f;
+    --light-blue: #a8dadc;
+    --light-green: #b7e4c7;
+    --light-yellow: #fff3b0;
+    --light-red: #ffc8c8;
+    --light-purple: #e4d4f4;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    font-family: 'Nunito', sans-serif;
+    color: var(--ink);
+    background-image: 
+      repeating-linear-gradient(0deg, transparent, transparent 27px, #d4c9a820 28px),
+      repeating-linear-gradient(90deg, transparent, transparent 27px, transparent 28px);
+    background-size: 28px 28px;
+  }
+
+  .header {
+    background: var(--ink);
+    color: var(--yellow);
+    text-align: center;
+    padding: 30px 20px 20px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 5px solid var(--yellow);
+  }
+
+  .header h1 {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 4px 4px 0 var(--orange);
+  }
+
+  .header p {
+    font-size: 1.1rem;
+    color: #ffecb3;
+    margin-top: 8px;
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+  }
+
+  .timer-badge {
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    font-family: 'Caveat', cursive;
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 6px 18px;
+    border-radius: 999px;
+    margin-top: 12px;
+    border: 3px solid white;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  /* NAV */
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    padding: 16px 20px;
+    background: white;
+    border-bottom: 3px dashed var(--ink);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .nav a {
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 999px;
+    text-decoration: none;
+    border: 2.5px solid currentColor;
+    transition: all 0.2s;
+  }
+
+  .nav a:hover { transform: translateY(-2px) rotate(-2deg); box-shadow: 2px 2px 0 var(--ink); }
+  .n1 { color: var(--red); } .n1:hover { background: var(--light-red); }
+  .n2 { color: var(--blue); } .n2:hover { background: #d4e9f7; }
+  .n3 { color: var(--green); } .n3:hover { background: var(--light-green); }
+  .n4 { color: var(--orange); } .n4:hover { background: #fde8de; }
+  .n5 { color: var(--purple); } .n5:hover { background: var(--light-purple); }
+  .n6 { color: var(--pink); } .n6:hover { background: #fce4e9; }
+  .n7 { color: var(--blue); } .n7:hover { background: #d4e9f7; }
+  .n8 { color: var(--green); } .n8:hover { background: var(--light-green); }
+
+  /* MAIN LAYOUT */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* SECTION CARDS */
+  .section {
+    margin-bottom: 40px;
+    scroll-margin-top: 80px;
+  }
+
+  .section-title {
+    font-family: 'Caveat', cursive;
+    font-size: 2.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding: 10px 18px;
+    border-radius: 12px;
+    border: 3px solid var(--ink);
+    position: relative;
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    right: -6px;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: var(--ink);
+    z-index: -1;
+  }
+
+  /* Card grid */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  .card {
+    background: white;
+    border: 3px solid var(--ink);
+    border-radius: 14px;
+    padding: 18px;
+    position: relative;
+    transition: transform 0.2s;
+  }
+
+  .card::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
+    background: var(--ink);
+    z-index: -1;
+  }
+
+  .card:hover { transform: translate(-2px, -2px); }
+
+  .card h3 {
+    font-family: 'Caveat', cursive;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .card p, .card li {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: #3a3020;
+  }
+
+  .card ul { padding-left: 18px; margin-top: 6px; }
+  .card li { margin-bottom: 4px; }
+
+  .tag {
+    display: inline-block;
+    font-family: 'Caveat', cursive;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+    border: 2px solid currentColor;
+  }
+
+  .highlight {
+    background: var(--yellow);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+
+  /* DOODLE SVG figures */
+  .doodle-wrap {
+    text-align: center;
+    margin: 8px 0;
+  }
+
+  /* COMPARISON TABLE */
+  .compare-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 4px;
+    margin-top: 12px;
+  }
+
+  .compare-table th {
+    background: var(--ink);
+    color: white;
+    font-family: 'Caveat', cursive;
+    font-size: 1.1rem;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-align: left;
+  }
+
+  .compare-table td {
+    background: white;
+    padding: 10px 14px;
+    border: 2.5px solid var(--ink);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .compare-table tr:nth-child(even) td { background: #fffbf0; }
+
+  /* BIG VISUAL panels */
+  .full-card {
+    background: white;
+    border: 3px solid var(--ink);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .full-card::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
+    background: var(--ink);
+    z-index: -1;
+  }
+
+  /* selection types row */
+  .selection-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .sel-box {
+    border-radius: 12px;
+    padding: 14px;
+    border: 2.5px solid var(--ink);
+    text-align: center;
+  }
+
+  .sel-box h4 {
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+  }
+
+  .sel-box p { font-size: 0.8rem; line-height: 1.5; }
+
+  /* SCIENTIST CARDS */
+  .scientist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 14px;
+  }
+
+  .sci-card {
+    border: 3px solid var(--ink);
+    border-radius: 14px;
+    padding: 16px;
+    background: white;
+    position: relative;
+    transition: transform 0.2s;
+  }
+
+  .sci-card::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
+    background: var(--ink);
+    z-index: -1;
+  }
+
+  .sci-card:hover { transform: translate(-2px, -2px); }
+
+  .sci-card .emoji { font-size: 2.5rem; text-align: center; display: block; margin-bottom: 8px; }
+  .sci-card h3 { font-family: 'Caveat', cursive; font-size: 1.2rem; font-weight: 700; margin-bottom: 4px; }
+  .sci-card .years { font-size: 0.75rem; color: #888; margin-bottom: 8px; }
+  .sci-card p { font-size: 0.82rem; line-height: 1.5; }
+  .sci-card .idea-badge {
+    font-family: 'Caveat', cursive;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 999px;
+    border: 2px solid currentColor;
+    display: inline-block;
+    margin-top: 8px;
+  }
+
+  /* ISOLATING MECHANISMS */
+  .iso-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .iso-col h4 {
+    font-family: 'Caveat', cursive;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    color: white;
+  }
+
+  .iso-item {
+    background: white;
+    border: 2px solid var(--ink);
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    font-size: 0.82rem;
+  }
+
+  .iso-item strong { font-family: 'Caveat', cursive; font-size: 0.95rem; }
+
+  /* PILL BADGES */
+  .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .pill {
+    font-family: 'Caveat', cursive;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 999px;
+    border: 2.5px solid var(--ink);
+  }
+
+  /* STRATUM visual */
+  .stratum {
+    border: 3px solid var(--ink);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+
+  .stratum-layer {
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    border-bottom: 2px dashed var(--ink);
+    font-weight: 700;
+  }
+
+  .stratum-layer:last-child { border-bottom: none; }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 30px 20px;
+    font-family: 'Caveat', cursive;
+    font-size: 1.3rem;
+    background: var(--ink);
+    color: var(--yellow);
+    border-top: 5px solid var(--yellow);
+    margin-top: 40px;
+  }
+
+  /* COLOR HELPERS */
+  .bg-red { background: var(--light-red); }
+  .bg-blue { background: #d4e9f7; }
+  .bg-green { background: var(--light-green); }
+  .bg-yellow { background: var(--light-yellow); }
+  .bg-purple { background: var(--light-purple); }
+  .bg-orange { background: #fde8de; }
+  .bg-pink { background: #fce4e9; }
+
+  .t-red { color: var(--red); }
+  .t-blue { color: var(--blue); }
+  .t-green { color: var(--green); }
+  .t-orange { color: var(--orange); }
+  .t-purple { color: var(--purple); }
+  .t-pink { color: var(--pink); }
+
+  /* PROGRESS */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background: var(--red);
+    width: 0%;
+    z-index: 999;
+    transition: width 0.1s;
+  }
+
+  @media (max-width: 600px) {
+    .selection-row { grid-template-columns: 1fr; }
+    .iso-grid { grid-template-columns: 1fr; }
+    .scientist-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* Wiggle animation on emojis */
+  .wiggle:hover { animation: wiggle 0.4s ease; }
+  @keyframes wiggle {
+    0%,100% { transform: rotate(0); }
+    25% { transform: rotate(-8deg); }
+    75% { transform: rotate(8deg); }
+  }
+
+  /* MINI QUIZ highlight */
+  .quiz-box {
+    background: var(--light-yellow);
+    border: 3px dashed var(--orange);
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-top: 14px;
+    font-size: 0.87rem;
+  }
+
+  .quiz-box h4 { font-family: 'Caveat', cursive; font-size: 1.1rem; margin-bottom: 6px; color: var(--orange); }
+
+  /* EMOJI BIG */
+  .emoji-big { font-size: 2rem; }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>🧬 EVOLUTION UNIT</h1>
+  <p>Sınavdan önce 1 saatte bilmen gereken her şey!</p>
+  <div class="timer-badge">⏱️ ~1 HOUR CRAM GUIDE · SBI3U</div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#adaptations" class="n1">1. Adaptations</a>
+  <a href="#scientists" class="n2">2. Scientists</a>
+  <a href="#evidence" class="n3">3. Evidence</a>
+  <a href="#natural-selection" class="n4">4. Natural Selection</a>
+  <a href="#allele-factors" class="n5">5. Gene Flow & Drift</a>
+  <a href="#selection-types" class="n6">6. 3 Selection Types</a>
+  <a href="#speciation" class="n7">7. Speciation</a>
+  <a href="#evolution-types" class="n8">8. Evolution Types</a>
+</nav>
+
+<div class="container">
+
+<!-- ===== 1. ADAPTATIONS ===== -->
+<div class="section" id="adaptations">
+  <div class="section-title bg-red" style="border-color:var(--red);">
+    <span>🦎</span> 1. Adaptations & Variations
+  </div>
+
+  <div class="card-grid">
+    <div class="card bg-red">
+      <div class="tag t-red" style="border-color:var(--red);">DEFINITION</div>
+      <h3>🧠 What is an Adaptation?</h3>
+      <p>A <span class="highlight">structure, behavior, or physiological process</span> that helps an organism survive & reproduce in its environment.</p>
+      <p style="margin-top:8px;">Adaptations come from <strong>genetic variations</strong> — if a variation helps survival, it gets passed down → becomes an adaptation!</p>
+    </div>
+
+    <div class="card bg-yellow">
+      <div class="tag" style="color:var(--orange); border-color:var(--orange);">EXAMPLES</div>
+      <h3>📝 3 Types of Adaptation</h3>
+      <ul>
+        <li>🎭 <strong>Camouflage</strong> – stick insect looks like a twig; hides from predators</li>
+        <li>😴 <strong>Hibernation</strong> – bears reduce metabolism to survive winter (physiological)</li>
+        <li>🦋 <strong>Mimicry</strong> – viceroy butterfly mimics toxic monarch; predators avoid both</li>
+      </ul>
+    </div>
+
+    <div class="card bg-green">
+      <div class="tag t-green" style="border-color:var(--green);">KEY TERM</div>
+      <h3>⚡ Selective Advantage</h3>
+      <p>A <span class="highlight">genetic advantage</span> that improves an organism's chance of survival in a changing environment.</p>
+      <p style="margin-top:8px;"><strong>Example:</strong> Some <em>Daphnia</em> (water fleas) mutated to survive in warm water (25–30°C) when others couldn't. That mutation = selective advantage!</p>
+    </div>
+
+    <div class="card bg-purple">
+      <div class="tag t-purple" style="border-color:var(--purple);">EXAMPLE STORY</div>
+      <h3>🦋 Peppered Moth Classic!</h3>
+      <p><strong>Before Industrial Revolution:</strong> Light moths survived on light lichen trees. Black moths were eaten.</p>
+      <p><strong>After:</strong> Factories covered trees in soot → black moths hid, light moths got eaten! Black moths = 95% of population.</p>
+      <p><strong>After clean-air laws:</strong> Light moths came back. Environment drives selection!</p>
+    </div>
+  </div>
+
+  <div class="quiz-box">
+    <h4>🔥 Exam Tip — Variation vs Adaptation</h4>
+    <p><strong>Variation</strong> = any difference between individuals (could be helpful, harmful, or neutral). <strong>Adaptation</strong> = a variation that has been "selected for" because it helps survival. Not all variations become adaptations!</p>
+  </div>
+</div>
+
+
+<!-- ===== 2. SCIENTISTS ===== -->
+<div class="section" id="scientists">
+  <div class="section-title bg-blue" style="border-color:var(--blue);">
+    <span>🔬</span> 2. The 4 Big Scientists
+  </div>
+
+  <div class="scientist-grid">
+    <div class="sci-card">
+      <span class="emoji">👴</span>
+      <h3>George Cuvier</h3>
+      <div class="years">1769–1832</div>
+      <p>Father of <strong>Paleontology</strong> (study of fossils). Found each rock layer has unique fossils — deeper = more different from today. Species can go <strong>EXTINCT!</strong></p>
+      <div class="idea-badge t-red" style="border-color:var(--red);">💥 Catastrophism</div>
+      <p style="font-size:0.78rem; margin-top:6px;">Earth changed through sudden violent events (floods, volcanoes).</p>
+    </div>
+
+    <div class="sci-card">
+      <span class="emoji">🪨</span>
+      <h3>Charles Lyell</h3>
+      <div class="years">Scottish Geologist</div>
+      <p>Rejected Cuvier. Said geological processes are <strong>slow & continuous</strong>, same as today. Earth must be MUCH older than 6000 years!</p>
+      <div class="idea-badge t-blue" style="border-color:var(--blue);">🌊 Uniformitarianism</div>
+      <p style="font-size:0.78rem; margin-top:6px;">"The present is the key to the past." Slow processes → big changes over time.</p>
+    </div>
+
+    <div class="sci-card">
+      <span class="emoji">🦒</span>
+      <h3>Jean-Baptiste Lamarck</h3>
+      <div class="years">1744–1829</div>
+      <p>Thought organisms get better over time. Body parts you <strong>USE a lot grow stronger</strong>, parts you don't use disappear. Then you PASS these to offspring.</p>
+      <div class="idea-badge t-green" style="border-color:var(--green);">🔄 Inheritance of Acquired Characteristics + Use & Disuse</div>
+      <p style="font-size:0.78rem; margin-top:6px;"><strong>Example:</strong> Giraffes stretched necks → passed long necks to babies. (WRONG but important!)</p>
+    </div>
+
+    <div class="sci-card">
+      <span class="emoji">⛵</span>
+      <h3>Charles Darwin</h3>
+      <div class="years">1809–1882</div>
+      <p>The big one! Observed Galapagos finches — each had different beak for different food. All from <strong>one ancestor!</strong></p>
+      <div class="idea-badge t-orange" style="border-color:var(--orange);">🏆 Natural Selection = Survival of the Fittest</div>
+      <p style="font-size:0.78rem; margin-top:6px;">4 key points: overproduction → variation → struggle → survival of best-fit → traits passed on.</p>
+    </div>
+  </div>
+
+  <!-- Darwin vs Lamarck Comparison -->
+  <div class="full-card" style="margin-top:16px;">
+    <h3 style="font-family:'Caveat',cursive; font-size:1.4rem; margin-bottom:10px;">⚔️ Darwin vs Lamarck — The Big Comparison</h3>
+    <table class="compare-table">
+      <tr>
+        <th>Feature</th>
+        <th>🦒 Lamarck</th>
+        <th>⛵ Darwin</th>
+      </tr>
+      <tr>
+        <td><strong>Mechanism</strong></td>
+        <td>Inheritance of acquired characteristics</td>
+        <td>Natural Selection</td>
+      </tr>
+      <tr>
+        <td><strong>How traits change</strong></td>
+        <td>Organism changes during its lifetime → passes it on</td>
+        <td>Random variation exists → environment selects who survives</td>
+      </tr>
+      <tr>
+        <td><strong>Giraffe neck?</strong></td>
+        <td>Giraffes stretched necks → offspring born with longer necks</td>
+        <td>Some giraffes were born with longer necks → they survived better → reproduced more</td>
+      </tr>
+      <tr>
+        <td><strong>Correct?</strong></td>
+        <td>❌ Wrong — acquired traits can't be inherited genetically</td>
+        <td>✅ Correct!</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+
+<!-- ===== 3. EVIDENCE FOR EVOLUTION ===== -->
+<div class="section" id="evidence">
+  <div class="section-title bg-green" style="border-color:var(--green);">
+    <span>🦴</span> 3. Evidence for Evolution
+  </div>
+
+  <!-- Stratum layers visual -->
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; flex-wrap:wrap;">
+    <div class="full-card">
+      <h3 style="font-family:'Caveat',cursive;font-size:1.3rem;margin-bottom:8px;">🪨 1. Fossil Record & Stratum Layers</h3>
+      <div class="stratum">
+        <div class="stratum-layer" style="background:#e8f4f8;">🐦 TOP = YOUNGEST (closest to today's species)</div>
+        <div class="stratum-layer" style="background:#d4e9c0;">🦖 Middle layers → transitional species</div>
+        <div class="stratum-layer" style="background:#f0d9a0;">🐟 Bottom = OLDEST (most different from today)</div>
+        <div class="stratum-layer" style="background:#e8c89a;">⬇️ DEEPER = MORE ANCIENT & SIMPLER</div>
+      </div>
+      <p style="font-size:0.82rem;margin-top:8px;">Cuvier discovered each <strong>stratum (rock layer)</strong> has unique fossils. Canada's Burgess Shale has Cambrian animals (500+ million years old)!</p>
+    </div>
+
+    <div class="full-card">
+      <h3 style="font-family:'Caveat',cursive;font-size:1.3rem;margin-bottom:8px;">🌍 3. Biogeography</h3>
+      <ul style="font-size:0.85rem;padding-left:16px;line-height:1.7;">
+        <li>Island animals resemble nearby <strong>mainland</strong> animals (not same environment elsewhere)</li>
+        <li>Galapagos animals → from South America</li>
+        <li>Same fossils found on <em>different continents</em> that were once joined (Gondwana)</li>
+        <li>Related species rarely in exact same habitat</li>
+      </ul>
+    </div>
+
+    <div class="full-card">
+      <h3 style="font-family:'Caveat',cursive;font-size:1.3rem;margin-bottom:8px;">🦴 2. Transitional Fossils & Vestigial Structures</h3>
+      <p style="font-size:0.85rem;"><strong>Transitional fossils</strong> = show intermediary link between 2 groups. Example: Ancient whales had <em>tiny legs & pelvis</em> → link to land ancestors!</p>
+      <p style="font-size:0.85rem;margin-top:8px;"><strong>Vestigial structures</strong> = reduced leftovers from ancestors that no longer have function. Examples: <span class="highlight">human appendix, wisdom teeth, goosebumps</span></p>
+    </div>
+
+    <div class="full-card">
+      <h3 style="font-family:'Caveat',cursive;font-size:1.3rem;margin-bottom:8px;">💪 4 & 5. Anatomy & Embryology</h3>
+      <p style="font-size:0.85rem;"><strong>Homologous structures</strong> = Same bones, different functions → inherited from common ancestor.<br>Example: human arm, cat paw, whale flipper, bat wing = same bones! 🦴</p>
+      <p style="font-size:0.85rem;margin-top:6px;"><strong>Analogous structures</strong> = Similar function, different origin. Example: bat wing vs butterfly wing vs bird wing — all fly but NOT related!</p>
+      <p style="font-size:0.85rem;margin-top:6px;"><strong>Embryology:</strong> All vertebrate embryos have gill pouches → fish keep them as gills, humans make ears/throat. Same early blueprint = common ancestor!</p>
+    </div>
+  </div>
+
+  <div class="full-card" style="margin-top:14px; background:var(--light-green);">
+    <h3 style="font-family:'Caveat',cursive;font-size:1.3rem;margin-bottom:8px;">🧬 6. DNA Evidence</h3>
+    <p style="font-size:0.87rem;">Similar DNA patterns = inherited from common ancestor. Dogs are related to bears. Whales & dolphins → related to hoofed animals (cows, deer)! The more similar the DNA, the more closely related the species.</p>
+  </div>
+
+  <div class="quiz-box">
+    <h4>🔥 Homologous vs Analogous — KNOW THE DIFFERENCE!</h4>
+    <p><strong>Homologous</strong> = same STRUCTURE, different function, SAME ancestor. (Human arm + whale flipper)<br>
+    <strong>Analogous</strong> = same FUNCTION, different structure, DIFFERENT ancestor. (Bird wing + butterfly wing — both fly but NOT related)</p>
+  </div>
+</div>
+
+
+<!-- ===== 4. NATURAL SELECTION ===== -->
+<div class="section" id="natural-selection">
+  <div class="section-title bg-orange" style="border-color:var(--orange);">
+    <span>🏆</span> 4. Natural Selection vs Artificial Selection
+  </div>
+
+  <div class="card-grid">
+    <div class="card bg-orange">
+      <div class="tag t-orange" style="border-color:var(--orange);">NATURAL</div>
+      <h3>🌿 Natural Selection</h3>
+      <p>The <strong>environment</strong> does the selecting. Individuals with helpful traits survive & reproduce → pass traits to offspring.</p>
+      <p style="margin-top:8px;"><strong>Darwin's 4 Steps:</strong></p>
+      <ul>
+        <li>Organisms produce MORE offspring than can survive</li>
+        <li>Individuals vary (heritable variation)</li>
+        <li>Best-fit individuals survive & reproduce</li>
+        <li>Change is slow & gradual</li>
+      </ul>
+      <p style="margin-top:8px;font-size:0.8rem;"><strong>Fitness</strong> = number of viable offspring you produce. Not about living long — about how many babies survive to reproduce!</p>
+    </div>
+
+    <div class="card bg-blue">
+      <div class="tag t-blue" style="border-color:var(--blue);">ARTIFICIAL</div>
+      <h3>👨‍🌾 Artificial Selection</h3>
+      <p><strong>Humans</strong> do the selecting. We choose which traits to breed for.</p>
+      <p style="margin-top:8px;"><strong>Examples:</strong></p>
+      <ul>
+        <li>🐄 Cows bred for more milk</li>
+        <li>🌽 Corn: from 5-12 kernels → 500+ kernels</li>
+        <li>🥦 Wild mustard → broccoli, cabbage, cauliflower</li>
+        <li>🐕 Bulldogs bred for flat face → breathing problems!</li>
+      </ul>
+      <p style="margin-top:8px;font-size:0.8rem;"><strong>Monoculture risk:</strong> planting only one crop variety = if disease hits, ALL plants die!</p>
+    </div>
+
+    <div class="card bg-yellow">
+      <div class="tag" style="color:#b45309;border-color:#b45309;">GENE POOL</div>
+      <h3>🧬 Gene Pool & Allele Frequency</h3>
+      <p>The <strong>gene pool</strong> = all alleles in a population. Evolution = change in allele frequencies over generations.</p>
+      <p style="margin-top:8px;">Individuals don't evolve — <span class="highlight">POPULATIONS evolve!</span></p>
+      <p style="margin-top:8px;font-size:0.8rem;">Example: Grey wolves in the north have more "white coat" alleles in their gene pool than southern wolves.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== 5. GENE FLOW & GENETIC DRIFT ===== -->
+<div class="section" id="allele-factors">
+  <div class="section-title bg-purple" style="border-color:var(--purple);">
+    <span>🎲</span> 5. Factors Changing Allele Frequency
+  </div>
+
+  <div class="card-grid">
+    <div class="card bg-purple">
+      <h3>🧬 Mutation</h3>
+      <p>Only source of <strong>NEW alleles</strong>. Random changes in DNA. If in gametes → passed to next generation. Provides raw material for evolution.</p>
+    </div>
+
+    <div class="card bg-blue">
+      <h3>🏃 Gene Flow (Migration)</h3>
+      <p>Movement of alleles <strong>between populations</strong> due to individuals migrating. Increases genetic diversity in the new population.</p>
+      <p style="margin-top:6px;font-size:0.82rem;"><strong>Example:</strong> A bird from population A moves to population B and breeds → A's alleles now in B's gene pool.</p>
+    </div>
+
+    <div class="card bg-yellow">
+      <h3>💑 Non-Random Mating</h3>
+      <p>Individuals choose mates based on <strong>phenotype</strong> (looks/behaviour). Increases <strong>homozygous</strong> individuals but does NOT change allele frequencies directly.</p>
+    </div>
+
+    <div class="card bg-red">
+      <div class="tag t-red" style="border-color:var(--red);">IMPORTANT!</div>
+      <h3>🎲 Genetic Drift</h3>
+      <p><strong>Random</strong> changes in allele frequency due to chance. Big effect in <strong>small populations</strong>. Two types:</p>
+      <div style="margin-top:10px; background:white; border:2px solid var(--red); border-radius:10px; padding:10px;">
+        <p><strong>🏝️ Founder Effect:</strong> A few individuals start a NEW isolated population → limited gene pool. Example: Amish community has high rate of polydactylism (6th finger)!</p>
+      </div>
+      <div style="margin-top:8px; background:white; border:2px solid var(--red); border-radius:10px; padding:10px;">
+        <p><strong>🌪️ Bottleneck Effect:</strong> Disaster/disease drastically reduces population → survivors have only fraction of original alleles. Example: Pingelap Island typhoon (1775) → only 30 survivors → 10% of current population has color blindness!</p>
+      </div>
+    </div>
+
+    <div class="card bg-green">
+      <h3>🌿 Natural Selection</h3>
+      <p>Most significant factor for new species. Environment selects which traits survive. Changes allele frequencies over many generations → leads to <strong>speciation</strong>.</p>
+    </div>
+  </div>
+
+  <div class="quiz-box">
+    <h4>🔥 Genetic Drift vs Natural Selection</h4>
+    <p><strong>Drift</strong> = RANDOM, due to chance (lottery). Bigger effect in small populations.<br>
+    <strong>Natural Selection</strong> = NON-RANDOM, environment actively selects for useful traits.</p>
+  </div>
+</div>
+
+
+<!-- ===== 6. THREE TYPES OF SELECTION ===== -->
+<div class="section" id="selection-types">
+  <div class="section-title bg-pink" style="border-color:var(--pink);">
+    <span>📊</span> 6. The 3 Types of Natural Selection
+  </div>
+
+  <div class="full-card">
+    <div class="selection-row">
+      <div class="sel-box bg-blue">
+        <div style="font-size:2rem;">⬆️</div>
+        <h4>Stabilizing Selection</h4>
+        <p><strong>Middle/average</strong> phenotype is favoured. Extremes are eliminated. Reduces variation.</p>
+        <p style="margin-top:8px;font-size:0.78rem;background:white;border-radius:8px;padding:6px;border:1.5px solid var(--blue);">🍼 <strong>Example:</strong> Human birth weight. Too small = unhealthy. Too large = hard to deliver. Average is best!</p>
+        <div style="margin-top:8px; display:flex; align-items:flex-end; justify-content:center; gap:2px; height:40px;">
+          <div style="width:14px;background:var(--blue);height:15px;border-radius:4px 4px 0 0;opacity:0.3;"></div>
+          <div style="width:14px;background:var(--blue);height:30px;border-radius:4px 4px 0 0;opacity:0.5;"></div>
+          <div style="width:14px;background:var(--blue);height:40px;border-radius:4px 4px 0 0;"></div>
+          <div style="width:14px;background:var(--blue);height:30px;border-radius:4px 4px 0 0;opacity:0.5;"></div>
+          <div style="width:14px;background:var(--blue);height:15px;border-radius:4px 4px 0 0;opacity:0.3;"></div>
+        </div>
+        <p style="font-size:0.7rem;text-align:center;">Middle peaks, extremes gone</p>
+      </div>
+
+      <div class="sel-box bg-orange">
+        <div style="font-size:2rem;">➡️</div>
+        <h4>Directional Selection</h4>
+        <p><strong>One extreme</strong> is favoured. Distribution curve SHIFTS in that direction. Common when environment changes.</p>
+        <p style="margin-top:8px;font-size:0.78rem;background:white;border-radius:8px;padding:6px;border:1.5px solid var(--orange);">🦋 <strong>Example:</strong> Peppered moths going dark in industrial England. Antibiotic resistance in bacteria!</p>
+        <div style="margin-top:8px; display:flex; align-items:flex-end; justify-content:center; gap:2px; height:40px;">
+          <div style="width:14px;background:var(--orange);height:5px;border-radius:4px 4px 0 0;opacity:0.3;"></div>
+          <div style="width:14px;background:var(--orange);height:12px;border-radius:4px 4px 0 0;opacity:0.4;"></div>
+          <div style="width:14px;background:var(--orange);height:22px;border-radius:4px 4px 0 0;opacity:0.6;"></div>
+          <div style="width:14px;background:var(--orange);height:35px;border-radius:4px 4px 0 0;"></div>
+          <div style="width:14px;background:var(--orange);height:40px;border-radius:4px 4px 0 0;"></div>
+        </div>
+        <p style="font-size:0.7rem;text-align:center;">Shifts to one side →</p>
+      </div>
+
+      <div class="sel-box bg-red">
+        <div style="font-size:2rem;">↔️</div>
+        <h4>Disruptive Selection</h4>
+        <p><strong>BOTH extremes</strong> are favoured. Middle is eliminated. Also called diversifying selection.</p>
+        <p style="margin-top:8px;font-size:0.78rem;background:white;border-radius:8px;padding:6px;border:1.5px solid var(--red);">🐟 <strong>Example:</strong> Coho salmon — tiny males "sneak" to mate, large males fight for mates. Medium males fail at BOTH!</p>
+        <div style="margin-top:8px; display:flex; align-items:flex-end; justify-content:center; gap:2px; height:40px;">
+          <div style="width:14px;background:var(--red);height:40px;border-radius:4px 4px 0 0;"></div>
+          <div style="width:14px;background:var(--red);height:25px;border-radius:4px 4px 0 0;opacity:0.6;"></div>
+          <div style="width:14px;background:var(--red);height:8px;border-radius:4px 4px 0 0;opacity:0.2;"></div>
+          <div style="width:14px;background:var(--red);height:25px;border-radius:4px 4px 0 0;opacity:0.6;"></div>
+          <div style="width:14px;background:var(--red);height:40px;border-radius:4px 4px 0 0;"></div>
+        </div>
+        <p style="font-size:0.7rem;text-align:center;">Two peaks, middle disappears</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== 7. SPECIATION & ISOLATION ===== -->
+<div class="section" id="speciation">
+  <div class="section-title bg-blue" style="border-color:var(--blue);">
+    <span>🌏</span> 7. Speciation & Reproductive Isolation
+  </div>
+
+  <div class="card-grid">
+    <div class="card bg-blue">
+      <h3>🔬 What is Speciation?</h3>
+      <p>Formation of <strong>new species</strong> from existing ones (= macroevolution). Happens when populations become so different they can no longer produce <span class="highlight">viable, fertile offspring</span>.</p>
+      <p style="margin-top:8px;font-size:0.82rem;"><strong>Biological species</strong> = organisms that CAN interbreed to produce fertile offspring.</p>
+    </div>
+
+    <div class="card bg-orange">
+      <h3>🏔️ Allopatric vs Sympatric</h3>
+      <p><strong>Allopatric</strong> = population split by <em>geographical barrier</em> (mountain, ocean). They evolve separately until they can't interbreed even if brought back together.</p>
+      <p style="margin-top:8px;"><strong>Sympatric</strong> = populations in the <em>same area</em> diverge due to chromosomal changes or non-random mating. More common in plants.</p>
+    </div>
+  </div>
+
+  <div class="full-card" style="margin-top:14px;">
+    <h3 style="font-family:'Caveat',cursive;font-size:1.4rem;margin-bottom:12px;">🚧 Reproductive Isolating Mechanisms</h3>
+    <div class="iso-grid">
+      <div class="iso-col">
+        <h4 style="background:var(--green);">PRE-ZYGOTIC (before fertilization)</h4>
+        <div class="iso-item"><strong>🏠 Habitat Isolation</strong><br>Same region, different habitats → rarely meet</div>
+        <div class="iso-item"><strong>⏰ Temporal Isolation</strong><br>Same habitat but breed at different TIMES (seasons/time of day)</div>
+        <div class="iso-item"><strong>🎵 Behavioural Isolation</strong><br>Different songs, dances, pheromones → won't mate with other species</div>
+        <div class="iso-item"><strong>🔒 Mechanical Isolation</strong><br>Anatomically incompatible → fertilization fails physically</div>
+        <div class="iso-item"><strong>🥚 Gametic Isolation</strong><br>Sperm can't survive in other species' reproductive tract → no fertilization</div>
+      </div>
+      <div class="iso-col">
+        <h4 style="background:var(--red); color:white;">POST-ZYGOTIC (after fertilization)</h4>
+        <div class="iso-item"><strong>💀 Hybrid Inviability</strong><br>Hybrid embryo develops but dies before birth (genetic incompatibility)</div>
+        <div class="iso-item" style="background:var(--light-yellow);"><strong>🐴 Hybrid Sterility</strong><br>Hybrid is born BUT is STERILE (can't reproduce)<br><em>Example: Horse 🐴 + Donkey 🐴 = Mule 🐴 (sterile!)</em></div>
+        <div class="iso-item"><strong>😵 Hybrid Breakdown</strong><br>Hybrids can mate but their offspring are weak or sterile</div>
+        <div style="background:var(--light-green);border:2px dashed var(--green);border-radius:10px;padding:10px;margin-top:8px;font-size:0.82rem;">
+          <strong>Easy memory trick:</strong><br>
+          Pre = PREVENT mating/fertilization<br>
+          Post = AFTER zygote forms but it fails
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== 8. EVOLUTION TYPES ===== -->
+<div class="section" id="evolution-types">
+  <div class="section-title bg-green" style="border-color:var(--green);">
+    <span>🌱</span> 8. Types of Evolution & Speed
+  </div>
+
+  <div class="card-grid">
+    <div class="card bg-orange">
+      <h3>🌳 Divergent Evolution</h3>
+      <p>Species that were <strong>similar diverge</strong> (become more different) as they adapt to different environments.</p>
+      <p style="margin-top:8px;font-size:0.82rem;"><strong>Example:</strong> Darwin's finches — all from one ancestor but evolved different beaks for different foods. Australian marsupials all diverged from one ancestor!</p>
+    </div>
+
+    <div class="card bg-blue">
+      <h3>🌊 Convergent Evolution</h3>
+      <p><strong>Different species</strong> independently develop <strong>similar traits</strong> for similar environments — NOT because they're related.</p>
+      <p style="margin-top:8px;font-size:0.82rem;"><strong>Example:</strong> Dolphins (mammal), sharks (fish), ichthyosaurs (reptile) — all streamlined for water but NOT related! Birds & bats both evolved wings independently.</p>
+    </div>
+
+    <div class="card bg-green">
+      <h3>🐌 Gradualism</h3>
+      <p>Darwin's original model. Evolution is <strong>slow and steady</strong> — many small changes accumulate over millions of years.</p>
+      <p style="margin-top:8px;font-size:0.82rem;">Big changes come from many tiny changes adding up.</p>
+    </div>
+
+    <div class="card bg-purple">
+      <h3>⚡ Punctuated Equilibrium</h3>
+      <p>Long periods of <strong>NO CHANGE (stasis)</strong> interrupted by sudden rapid bursts of change. Most change happens right after diverging from parent species.</p>
+      <p style="margin-top:8px;font-size:0.82rem;"><strong>vs Gradualism:</strong> Gradualism = slow constant change; Punctuated Equilibrium = mostly stable with sudden jumps!</p>
+    </div>
+  </div>
+
+  <!-- Final master quiz box -->
+  <div class="quiz-box" style="margin-top:20px;">
+    <h4>🏁 SECTION D — Compare & Contrast Pairs to Know</h4>
+    <p>These are likely the compare/contrast options. Know what makes them <em>different</em> AND what's <em>similar</em>, plus an example of each:</p>
+    <div class="pill-row">
+      <div class="pill bg-red">Natural vs Artificial Selection</div>
+      <div class="pill bg-blue">Darwin vs Lamarck</div>
+      <div class="pill bg-green">Homologous vs Analogous</div>
+      <div class="pill bg-orange">Genetic Drift vs Gene Flow</div>
+      <div class="pill bg-purple">Allopatric vs Sympatric</div>
+      <div class="pill" style="background:var(--light-yellow);">Divergent vs Convergent</div>
+      <div class="pill bg-pink">Gradualism vs Punctuated Equilibrium</div>
+      <div class="pill bg-red">Founder Effect vs Bottleneck</div>
+      <div class="pill bg-blue">Pre-zygotic vs Post-zygotic</div>
+    </div>
+  </div>
+
+  <!-- MASTER SUMMARY BOX -->
+  <div class="full-card" style="margin-top:20px; background:var(--ink); color:white; border-color:var(--yellow);">
+    <h3 style="font-family:'Caveat',cursive;font-size:1.5rem;margin-bottom:14px;color:var(--yellow);">⭐ MASTER CHEAT SHEET — Key Vocab</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:0.82rem;line-height:1.7;">
+      <div>
+        <p>🦎 <strong style="color:var(--yellow);">Adaptation</strong> = structure/behavior helping survival</p>
+        <p>⚡ <strong style="color:var(--yellow);">Selective Advantage</strong> = genetic edge in changing environment</p>
+        <p>🏆 <strong style="color:var(--yellow);">Fitness</strong> = # of viable offspring produced</p>
+        <p>🧬 <strong style="color:var(--yellow);">Mutation</strong> = only source of NEW alleles</p>
+        <p>🏃 <strong style="color:var(--yellow);">Gene Flow</strong> = alleles moving between populations</p>
+        <p>🎲 <strong style="color:var(--yellow);">Genetic Drift</strong> = random allele frequency change</p>
+        <p>🏝️ <strong style="color:var(--yellow);">Founder Effect</strong> = small group starts new population</p>
+        <p>🌪️ <strong style="color:var(--yellow);">Bottleneck</strong> = disaster reduces population drastically</p>
+      </div>
+      <div>
+        <p>💥 <strong style="color:var(--yellow);">Catastrophism</strong> = sudden events changed Earth (Cuvier)</p>
+        <p>🌊 <strong style="color:var(--yellow);">Uniformitarianism</strong> = slow processes, same as today (Lyell)</p>
+        <p>🦴 <strong style="color:var(--yellow);">Vestigial</strong> = leftover useless structure from ancestor</p>
+        <p>🦴 <strong style="color:var(--yellow);">Homologous</strong> = same structure, different function, same ancestor</p>
+        <p>🦋 <strong style="color:var(--yellow);">Analogous</strong> = same function, different structure, different ancestor</p>
+        <p>🔬 <strong style="color:var(--yellow);">Speciation</strong> = new species from existing species</p>
+        <p>🌳 <strong style="color:var(--yellow);">Divergent</strong> = one → many (different environments)</p>
+        <p>🌊 <strong style="color:var(--yellow);">Convergent</strong> = many → similar (same environment, unrelated)</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  🍀 Good luck on your exam! You've got this! 🧬
+  <br>
+  <span style="font-size:1rem;opacity:0.7;">Adaptations → Scientists → Evidence → Natural Selection → Drift/Flow → 3 Selection Types → Speciation → Evolution Types</span>
+</div>
+
+<script>
+  // Progress bar
+  window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.getElementById('progressBar').style.width = scrolled + '%';
+  });
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
